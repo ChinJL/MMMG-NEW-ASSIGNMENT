@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/BackUp/Level 1 (BackUp).unity
-    guid: e73a9e8597fe16d4db44c40f43823ea3
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 6eaa66cc831f15048a1b3d0bf8f2767e
@@ -20,6 +17,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 4d9ab1116a14df342b414215f5cf5b47
-  - enabled: 0
-    path: Assets/Scenes/BackUp/Level 3(backup).unity
-    guid: a36e077ba63b41345b70657275dd1930
