@@ -5080,8 +5080,6 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   m_laserPoint: {fileID: 1589487297}
   roomLayer: {fileID: 104113350}
-  isPortals: 0
-  isSwitched: 0
 --- !u!23 &879207452
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7121,7 +7119,6 @@ MonoBehaviour:
   powerLvl: 0
   m_laserPoint: {fileID: 378746672}
   offset_x: 0.5
-  laserDestination: {fileID: 0}
 --- !u!1 &1132541777
 GameObject:
   m_ObjectHideFlags: 0
@@ -7669,7 +7666,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -8426,8 +8423,6 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   m_laserPoint: {fileID: 810267105}
   roomLayer: {fileID: 104113350}
-  isPortals: 0
-  isSwitched: 0
 --- !u!1 &1446420754
 GameObject:
   m_ObjectHideFlags: 0
@@ -10221,7 +10216,6 @@ MonoBehaviour:
   powerLvl: 0
   m_laserPoint: {fileID: 1910525064}
   offset_x: -0.5
-  laserDestination: {fileID: 0}
 --- !u!1 &1675733555
 GameObject:
   m_ObjectHideFlags: 0
