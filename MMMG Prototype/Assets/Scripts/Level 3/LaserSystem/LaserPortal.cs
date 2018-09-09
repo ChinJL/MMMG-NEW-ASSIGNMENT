@@ -11,14 +11,14 @@ public class LaserPortal : Laser {
 	private float maxPower = 0.5f;
 
 	public Vector3 laserDirection;
-
 	[SerializeField] private Transform portal1a = null, portal1b = null, portal2a = null, portal2b = null;
 	[SerializeField] private Sprite portalSprite = null;
 	private SpriteRenderer portalSpriteRend, m_spriteRend;
 	[SerializeField] private Transform fakeSprite = null;
 	private float rotDir;
 
-	private void Awake(){
+	protected override void Awake(){
+		base.Awake ();
 		DecideLaserPoint ();
 		m_spriteRend = GetComponent<SpriteRenderer> ();
 	}
@@ -87,7 +87,7 @@ public class LaserPortal : Laser {
 				if (hitObject != null)
 				{
 					hitLocation = hit.point;
-					DisplayLaser (hit.point, hitObject);
+					LaserEffect (hit.point, hitObject);
 					LineRendEnable ();
 				}
 				else
@@ -139,7 +139,6 @@ public class LaserPortal : Laser {
 		}
 		else
 		{
-//			lineRenderer.enabled = false;
 			isShot = true;
 		}
 	}

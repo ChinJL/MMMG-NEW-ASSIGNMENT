@@ -9,7 +9,7 @@ public class GravityControl : MonoBehaviour {
 	public bool gravityControl;
 
 	public LightSwitch lightSwitch;
-
+	public SpriteRenderer m_sr;
 	public Animator anim;
 
 	// Use this for initialization
@@ -36,6 +36,7 @@ public class GravityControl : MonoBehaviour {
 	{
 		if (lightSwitch.isLightOn)
 		{
+			m_sr.flipY = !m_sr.flipY;
 			gravityControl = !gravityControl;
 		}
 	}

@@ -48,13 +48,6 @@ public class SwitchRoom : MonoBehaviour {
 			initialPos2 = room2.localPosition;
 			initialPos3 = room3.localPosition;
 			initialPos4 = room4.localPosition;
-
-			GameObject[] laserCannon = GameObject.FindGameObjectsWithTag ("LaserCannon");
-			foreach (GameObject Lasercannon in laserCannon) {
-				LaserCannon LaserCannons = Lasercannon.GetComponent<LaserCannon> ();
-				LaserCannons.isSwitched = !LaserCannons.isSwitched;
-			}
-
 			StartCoroutine(DelaySwitchRoom_1 ());
 		} else {
 			return;
@@ -88,14 +81,6 @@ public class SwitchRoom : MonoBehaviour {
 			initialPos2 = room3.localPosition;
 			initialPos3 = room4.localPosition;
 			initialPos4 = room5.localPosition;
-
-
-			GameObject[] laserCannon = GameObject.FindGameObjectsWithTag ("LaserCannon");
-			foreach (GameObject Lasercannon in laserCannon) {
-				LaserCannon LaserCannons = Lasercannon.GetComponent<LaserCannon> ();
-				LaserCannons.isSwitched = !LaserCannons.isSwitched;
-			}
-
 			StartCoroutine(DelaySwitchRoom_2 ());
 		} else {
 			return;
@@ -120,6 +105,7 @@ public class SwitchRoom : MonoBehaviour {
 		RaiseReflector ();
 		yield return null;
 	}
+
 	private IEnumerator moveLayer(Transform layer, Vector3 dir1, Vector3 dir2, Vector3 targetPos, float distance, float speed, float distanceMultiplier){
 		//Change destination condition based on the heading direction
 		Vector3 destination = layer.localPosition + dir1 * distance;
@@ -140,7 +126,6 @@ public class SwitchRoom : MonoBehaviour {
 			layer.localPosition = Vector3.MoveTowards (layer.localPosition, destination, Time.deltaTime * speed);
 			yield return null;
 		}
-		//yield return isSwitching = false;
 		yield return null;
 	}
 

@@ -4,15 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class LightSwitch : MonoBehaviour {
-	//[SerializeField] private SpriteRenderer[] graffiti_spriteRend = null;
-	//private Material[] graffiti_mat;
 	[SerializeField] private GameObject directionalLight = null;
 	[SerializeField] private SpriteRenderer[] walls = null;
-	private Sprite[] wallSprite;
 	public bool isLightOn;
 	[SerializeField] private Material graffiti_mat = null;
 	private Color alpha_zero, alpha_one, alpha_increment, alpha_decrement, white, grey;
-	//[SerializeField] private bool isLvl1 = false;
 
 	private void Awake(){
 		directionalLight.SetActive (true);
@@ -40,11 +36,7 @@ public class LightSwitch : MonoBehaviour {
 				wall.color = white;
 			}
 			StartCoroutine (SwitchOnLight ());
-
-			//if (isLvl1)
-			//{
-				EnableHiddenPathTrigger ();
-			//}
+			EnableHiddenPathTrigger ();
 		}
 		else
 		{
@@ -54,11 +46,7 @@ public class LightSwitch : MonoBehaviour {
 				wall.color = grey;
 			}
 			StartCoroutine (SwitchOffLight ());
-
-			//if (isLvl1)
-			//{
-				DisableHiddenPathTrigger ();
-			//}
+			DisableHiddenPathTrigger ();
 		}
 	}
 

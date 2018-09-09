@@ -9,9 +9,6 @@ public class LaserCannon : Laser {
 	SwitchRoom switchRoom;
 	LightSwitch lightSwitch;
 
-	public bool isPortals = false;
-	public bool isSwitched = false;
-
 	private void OnEnable(){
 		laserPoint = m_laserPoint;
 		laserSource = gameObject.transform;

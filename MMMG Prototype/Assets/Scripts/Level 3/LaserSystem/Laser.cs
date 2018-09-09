@@ -11,7 +11,7 @@ public class Laser : MonoBehaviour {
 
 	[SerializeField] protected LineRenderer lineRenderer;
 
-	private void Awake()
+	protected virtual void Awake()
 	{
 		LineRendSetUp ();
 	}
@@ -49,12 +49,12 @@ public class Laser : MonoBehaviour {
 			if (hitObject != null)
 			{
 				hitLocation = hit.point;
-				DisplayLaser (hit.point, hitObject);
+				LaserEffect (hit.point, hitObject);
 			}
 		}
 	}
 
-	protected virtual void DisplayLaser(Vector3 hitPos, GameObject hitObj){
+	protected virtual void LaserEffect(Vector3 hitPos, GameObject hitObj){
 		Debug.DrawLine (laserPoint.position, hitPos, Color.green);
 		//effect
 		if (gameObject.CompareTag (s_laserCannon))
