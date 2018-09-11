@@ -9,9 +9,6 @@ public class AudioManager : MonoBehaviour {
 	[SerializeField] private AudioClip[] audios = null;
 	public AudioSource bgmSource = null, sfxSource = null, walkingSoundSource = null;
 	private static bool isBGM = true, isSFX = true;
-	[SerializeField] private Image bgmImg = null, sfxImg = null;
-	[SerializeField] private Sprite musicOn = null, musicOff = null, soundOn = null, soundOff = null;
-
 	public enum Sfx{
 		victory, correct, arranged, notArranged, button, openBag, closeBag, onLight, offLight, portalBullet, walk, laser, charged, roomMoving, reflectorMoving
 	}
@@ -39,31 +36,11 @@ public class AudioManager : MonoBehaviour {
 		} else {
 			isSFX = false;
 		}
-		if (isBGM) {
-			if (bgmImg != null) {
-				bgmImg.sprite = musicOn;
-			}
-			bgmSource.volume = 1;
-		} else {
-			if (bgmImg != null) {
-				bgmImg.sprite = musicOff;
-			}
-			bgmSource.volume = 0;
-		}
-		if (isSFX) {
-			if (sfxImg != null) {
-				sfxImg.sprite = soundOn;
-			}
-			sfxSource.volume = 0.75f;
-			walkingSoundSource.volume = 0.75f;
-		} else {
-			if (sfxImg != null) {
-				sfxImg.sprite = soundOff;
-			}
-			sfxSource.volume = 0;
-			walkingSoundSource.volume = 0;
-		}
+
+		sfxSource.volume = 0;
+		walkingSoundSource.volume = 0;
 	}
+
 
 	public void PlaySfx(Sfx sound){
 		if (sound == Sfx.victory){
@@ -132,11 +109,9 @@ public class AudioManager : MonoBehaviour {
 		isBGM = !isBGM;
 		if (isBGM) {
 			PlayerPrefs.SetFloat ("isBGM", 1);
-			bgmImg.sprite = musicOn;
 			bgmSource.volume = 1;
 		} else {
 			PlayerPrefs.SetFloat ("isBGM", 0);
-			bgmImg.sprite = musicOff;
 			bgmSource.volume = 0;
 		}
 	}
@@ -145,12 +120,10 @@ public class AudioManager : MonoBehaviour {
 		isSFX = !isSFX;
 		if (isSFX) {
 			PlayerPrefs.SetFloat ("isSFX", 1);
-			sfxImg.sprite = soundOn;
 			sfxSource.volume = 0.75f;
 			walkingSoundSource.volume = 0.75f;
 		} else {
 			PlayerPrefs.SetFloat ("isSFX", 0);
-			sfxImg.sprite = soundOff;
 			sfxSource.volume = 0;
 			walkingSoundSource.volume = 0;
 		}
